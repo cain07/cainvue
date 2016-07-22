@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" ></script>
+</head>
+<body>
+<p>单项绑定</p>
+<div id="app">
+    {{message}}
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data :{
+            message:'yaojianwei js'
+        }
+    }
+    )
+</script>
+
+<p>双向绑定</p>
+<div id="app2">
+    <p>{{message2}}</p>
+    <input v-model="message2">
+</div>
+
+<script>
+    new Vue({
+        el: '#app2',
+        data: {
+            message2: 'Hello Vue.js!'
+        }
+    })
+</script>
+
+<p>渲染列表</p>
+<div id="app3">
+    <ul>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el:'#app3',
+        data:{
+            todos:[
+                {text:'java'},
+                {text:'ios'},
+                {text:'android'},
+                {text:'android'},
+                {text:'android'},
+                {text:'android'},
+                {text:'android'},
+                {text:'android'},
+                {text:'android'},
+                {text:'android'},
+                {text:'php'}
+            ]
+        }
+    })
+
+</script>
+
+<p>处理用户输入</p>
+
+<div id="app4">
+    <p>{{ message4 }}</p>
+    <button v-on:click="reverseMessage">reverse Message</button>
+</div>
+
+<script>
+    new Vue(
+            {
+                el:'#app4',
+                data:{
+                    message4:'Hello Vue.js!'
+                },
+                methods:{
+                    reverseMessage:function () {
+                        this.message4 = this.message4.splice('').reverse().join('')
+                    }
+    }
+            }
+    )
+
+</script>
+
+<p>综合</p>
+<div>
+    <input v>
+</div>
+</body>
+</html>

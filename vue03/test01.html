@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>表单控件绑定</title>
+    <script src="vue.js" ></script>
+    <script src="biaoge.js" ></script>
+    <link href="markdown.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+
+<div id="editor">
+    <textarea v-model="input" debounce="300"></textarea>
+   <!-- <div v-html="input | marked"></div>-->
+
+    <div>{{input}}</div>
+
+</div>
+
+<script>
+    new Vue({
+        el:'#editor',
+        data: {
+            input: '#hello'
+        }
+        /*filters: {
+            marked: marked
+        }*/
+    })
+</script>
+
+
+
+</body>
+</html>
